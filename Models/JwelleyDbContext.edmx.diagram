@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5509a07a69d84da796ce4a0c868acc00" Name="Diagram1">
+        <EntityTypeShape EntityType="jewellyModel.AdminLoginMst" Width="1.5" PointX="3.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.BrandMst" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.CartList" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.CatMst" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.CertifyMst" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.DimInfoMst" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.DimMst" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.DimQltyMst" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.DimQltySubMst" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.GoldKrtMst" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.Img" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.Inquiry" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.ItemMst" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.JewelTypeMst" Width="1.5" PointX="0.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.Orderdetail" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.Payment" Width="1.5" PointX="3.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.ProdMst" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.StoneMst" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.StoneQltyMst" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.sysdiagram" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="jewellyModel.UserRegMst" Width="1.5" PointX="3.75" PointY="23.875" IsExpanded="true" />
+        <AssociationConnector Association="jewellyModel.fk_crt_id_ad" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_brand" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_crt_id_pay" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_crt_id_user" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_details_id_cart" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_cat" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_cer" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_diminfor" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_dim_id_dimqly" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_dim_id_item" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_dim_id_sub" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_goldtype" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_img" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_details_id_item" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_jwelly" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_item_id_prod" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_stone_id_item" ManuallyRouted="false" />
+        <AssociationConnector Association="jewellyModel.fk_Stone_id_stoneqlty" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

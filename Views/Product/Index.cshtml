@@ -1,0 +1,566 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container-fluid de_" id="display_filter">
+    <div class="find_cat" >
+        <div class="header_filter">
+            <p>FILTER</p>
+            <a href="">
+                <i class="fa-solid fa-xmark filter_cancel"></i>
+            </a>
+        </div>
+        <div class="filter_price">
+            <p>Price</p>
+            <div class="filter_price_moz">
+                <div class="progress_"></div>
+            </div>
+            <div class="range_input">
+                <input type="range" class="range_min" min="0" max="10000" value="2500" />
+                <input type="range" class="range_max" min="0" max="10000" value="7500" />
+
+            </div>
+            <div>
+                <div class="dis_price">
+                    <span id="spanValueMin">2500</span>
+                    <span id="spanValueMax">7500</span>
+
+
+                </div>
+            </div>
+            <hr />
+            <div>
+                <p class="style_title">Style</p>
+                <div>
+                    <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div>
+                    <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div> <div class="one_row">
+                        <div>
+                            <input type="radio" class="radio_input_pro" /> Barcelte
+                        </div>
+                        <div class="text_ra_pro">
+                            <p class="ivotrivcl">1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="container-fluid contain_of_pro" id="contain_of_pro">
+    <div class="contain_bg_pro">
+        <img src="~/Content/Image/Home/b1.jpg" class="img_bg_pro" />
+    </div>
+    <div class="intro_pro">
+
+        <p class="para_product">
+
+            Here at Jewels of the Kimberley all our pink diamonds originate from the Argyle Diamond Mine, once located in northern Western Australia. The mine, now closed was the world’s largest source of pink diamonds, boasting 95% of the world’s supply.
+
+            We have hand selected our pink diamonds with our qualified gemmologist to ensure they are true to their type and certification. This amazing gemstone has surpassed all other diamonds in demand, price and beauty. Proven to be an investor’s dream or an amazing bespoke piece of fine jewellery to be adorned for generations.
+
+            The Australian pink diamond is the rarest and most valuable gemstone in the world. For every million carats of rough diamonds mined only one carat of pink diamonds will be suitable for sale. The exclusivity and beauty of the Argyle pink diamond makes it perfect for a stunning statement piece, or the ideal investment.
+        </p>
+    </div>
+    <div class="filter_product">
+        <div class="filter_tap">
+            <a class="selec_fil" id="filter_pro">
+                <i class="fa-solid fa-filter"></i>   Filter
+
+            </a>
+         
+        </div>
+        <div class="cate_tap">
+            Show 1-100 products for you <select class="form_select">
+                <option>
+                    Diamond Red
+                </option>
+                <option>
+                    Ring Diamond
+                </option>
+            </select>
+        </div>
+    </div>
+
+   
+    
+
+    @* show product *@
+<div class="show_product" id="show_product">
+    <div class="container-fluid edit_space" data-aos="fade-up" data-aos-duration="5000">
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+            <div class="col-sm-3 effect_item">
+                <a href="">
+                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
+                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
+                    <p class="title_item_">Florentino Diamond Jewelly</p>
+                    <p class="title_item__">AOV</p>
+                    <p class="title_item__one">2,000,000 $</p>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+   
+
+
+</div>
+    <div class="page_pro">
+        <div class="pagination_pro" id="pagination">
+
+        </div>
+    </div>
+</div>
+<script>
+    AOS.init();
+    function load(img) {
+        const url = img.getAttribute('lazy_src')
+        img.setAttribute('src', url)
+    }
+    function ready() {
+        if ('IntersectionObserver' in window) {
+            var lazyimg = document.querySelectorAll('[lazy_src]')
+            let obsesr = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        load(entry.target)
+                    }
+                })
+            });
+            lazyimg.forEach(img => {
+                obsesr.observe(img)
+            })
+        } else {
+
+        }
+    }
+    document.addEventListener('DOMContentLoaded', ready);
+    //rangeinput
+
+    const rangeInput = document.querySelectorAll(".range_input input"),
+    process = document.querySelector(".filter_price_moz .progress_");
+    textMin = document.getElementById('spanValueMin');
+    textMax = document.getElementById('spanValueMax');
+
+
+    rangeInput.forEach(input => {
+        input.addEventListener("input", () => {
+            let minval = parseInt(rangeInput[0].value),
+                maxval = parseInt(rangeInput[1].value)
+            process.style.left = (minval / rangeInput[0].max) * 100 + "%";
+            process.style.right = 100 - (maxval / rangeInput[1].max) * 100 + "%";
+            textMin.textContent = minval;
+            textMax.textContent = maxval;
+
+            console.log(minval, maxval);
+        })
+    });
+
+
+
+    //display_filter
+    var display = document.getElementById('display_filter');
+    var contain_pro = document.getElementById('contain_of_pro')
+    var filter = document.getElementById('filter_pro');
+    filter.onclick = function () {
+        display.style.display = "block";
+        display.style.transition = "5s all ease 5s";
+
+    }
+    //paging 
+    document.addEventListener('DOMContentLoaded', function () {
+        var itemsPerPage = 12;
+        var productList = document.getElementById('show_product');
+        var products = productList.getElementsByClassName('effect_item');
+        var totalPages = Math.ceil(products.length / itemsPerPage);
+        showPage(1   );
+        var pagination = document.getElementById('pagination');
+
+        for (var i = 1; i <= totalPages; i++) {
+            var pageLink = document.createElement('span');
+            pageLink.textContent = i;
+            pageLink.classList.add('page-link');
+            pageLink.style.border = "none";
+            pageLink.style.color = "#000";
+            var cpage=pageLink;
+            pageLink.addEventListener('click', function () {
+                pageLink.style.backgroundColor = "#000";
+                pageLink.style.color = "#fff";
+                showPage(parseInt(this.textContent));              
+            });
+            pagination.appendChild(pageLink);
+        }
+
+        function showPage(pageNumber) {
+            for (var i = 0; i < products.length; i++) {
+                products[i].style.display = 'none';
+            }
+
+            var startIndex = (pageNumber - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
+
+            for (var i = startIndex; i < endIndex && i < products.length; i++) {
+                products[i].style.display = 'block';
+               
+            }
+        }
+    });
+
+</script>
+
+
