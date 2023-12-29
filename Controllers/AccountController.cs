@@ -14,7 +14,7 @@ namespace Jwelley.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        public jewellyEntities db = new jewellyEntities();
+        public JwelleyEntities db = new JwelleyEntities();
         public ActionResult Login()
         {
             return View();
@@ -124,19 +124,19 @@ namespace Jwelley.Controllers
         }
         public ActionResult General()
         {
-        
-        return View();
+            return View();
         }
         
 
         public ActionResult Change()
         {
-            
-            return View();
+           
+              return View();
         }
         [HttpPost]
         public ActionResult Change(string Password, UserRegMst userReg, string New)
         {
+ 
             var username = Session["Username"].ToString();
 
             var cpass = GetMD5(Password);
@@ -150,12 +150,14 @@ namespace Jwelley.Controllers
                 {
                     var users = db.UserRegMsts.FirstOrDefault(s => s.Username == username);
                     users.password = newpass;
-                    db.SaveChanges();
+                   
+                    db.SaveChanges(); 
                     return RedirectToAction("General", "Account");
 
                 }
                 else
                 {
+
                     return RedirectToAction("Change","Account");
 
                 }
@@ -163,7 +165,8 @@ namespace Jwelley.Controllers
 
             else
             {
-                return View("Login");
+                return RedirectToAction("Change", "Account");
+
 
             }
 
@@ -174,12 +177,18 @@ namespace Jwelley.Controllers
         {
             if (Session["Username"] == null)
             {
-                return Content("Error");
-
+                return View();
             }
-            var username = Session["Username"].ToString();
-            UserRegMst users = db.UserRegMsts.Where(s => s.Username == username).FirstOrDefault();
+            else
+            {
+  var username = Session["Username"].ToString();
+
+                UserRegMst users = db.UserRegMsts.Where(s => s.Username == username).FirstOrDefault();
             return View(users);
+            }
+          
+            
+           
         }
         [HttpPost]
         public ActionResult Information(UserRegMst users,HttpPostedFileBase imageFiles)

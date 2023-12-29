@@ -1140,7 +1140,11 @@ form.example::after {
     text-align: center;
     display: flex;
 }
-
+.zuize {
+    font-family: cursive;
+    font-weight: 600;
+text-align: center;
+}
 .select_avt {
     position: relative;
     right: 2em;
@@ -1207,6 +1211,7 @@ form.example::after {
         color: #000;
         text-decoration: none;
     }
+    
 /*Product*/
 .contain_of_pro {
     padding: 0 !important;
@@ -1402,10 +1407,6 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: #000;
 }
-
-.ivotrivcl {
-}
-
 .one_row {
     display: flex;
     margin-top: 2em;
@@ -1422,6 +1423,37 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .style_title {
-    margin-top: 2em;
+    margin-top: 1.2em;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 22px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+/*.active, .style_title:hover {
+        background-color: #ccc;
+    }*/
+.style_title:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+.active:after {
+        content: "\2212";
+    }
+.panel_ {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease;
 }
 /*End Product*/

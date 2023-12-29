@@ -13,10 +13,10 @@ namespace Jewelly.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class jewellyEntities : DbContext
+    public partial class JwelleyEntities : DbContext
     {
-        public jewellyEntities()
-            : base("name=jewellyEntities")
+        public JwelleyEntities()
+            : base("name=JwelleyEntities")
         {
         }
     
@@ -30,6 +30,7 @@ namespace Jewelly.Models
         public virtual DbSet<CartList> CartLists { get; set; }
         public virtual DbSet<CatMst> CatMsts { get; set; }
         public virtual DbSet<CertifyMst> CertifyMsts { get; set; }
+        public virtual DbSet<Collection> Collections { get; set; }
         public virtual DbSet<DimInfoMst> DimInfoMsts { get; set; }
         public virtual DbSet<DimMst> DimMsts { get; set; }
         public virtual DbSet<DimQltyMst> DimQltyMsts { get; set; }
@@ -39,12 +40,12 @@ namespace Jewelly.Models
         public virtual DbSet<Inquiry> Inquiries { get; set; }
         public virtual DbSet<ItemMst> ItemMsts { get; set; }
         public virtual DbSet<JewelTypeMst> JewelTypeMsts { get; set; }
+        public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Orderdetail> Orderdetails { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<ProdMst> ProdMsts { get; set; }
         public virtual DbSet<StoneMst> StoneMsts { get; set; }
         public virtual DbSet<StoneQltyMst> StoneQltyMsts { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserRegMst> UserRegMsts { get; set; }
     }
 }

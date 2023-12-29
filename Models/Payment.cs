@@ -22,7 +22,7 @@ namespace Jewelly.Models
     
         public int ID { get; set; }
         public string type { get; set; }
-        public Nullable<int> numbercard { get; set; }
+        public string numbercard { get; set; }
         public Nullable<int> cgv { get; set; }
         public Nullable<System.DateTime> expiration_date { get; set; }
     

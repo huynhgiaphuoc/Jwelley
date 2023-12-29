@@ -1,4 +1,4 @@
-﻿
+﻿@model dynamic
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
@@ -23,107 +23,97 @@
             </div>
             <div>
                 <div class="dis_price">
-                    <span id="spanValueMin">2500</span>
-                    <span id="spanValueMax">7500</span>
+                    <span id="spanValueMin">25000,00</span>
+                    <span id="spanValueMax">75000,00</span>
 
 
                 </div>
             </div>
             <hr />
+            @* Brand *@
             <div>
-                <p class="style_title">Style</p>
-                <div>
-                    <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
+                <p class="style_title">Brand</p>
+                <div class="panel_">
+                    @foreach (var item in Model.Brand)
+                    {
+                        <div class="one_row">
+                            <div>
+                                <input type="radio" class="radio_input_pro" value="@item.Brand_ID" />    @item.Brand_Type
+                            </div>
                         </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
+
+                    }
+
+                </div>
+            </div>
+            <hr />
+            @* Jeweley *@
+            <div>
+                <p class="style_title">Jewelry</p>
+                <div class="panel_">
+                    @foreach (var item in Model.Jewe)
+                    {
+                        <div class="one_row">
+                            <div>
+                                <input type="radio" class="radio_input_pro" value="@item.ID" />    @item.Jewellery_Type
+                            </div>
                         </div>
-                    </div>
-                    <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
+
+                    }
+
+                </div>
+            </div>
+            <hr />
+            @* Gold_type *@
+            <div>
+                <p class="style_title">Gold Type</p>
+                <div class="panel_">
+                    @foreach (var item in Model.GoldType)
+                    {
+                        <div class="one_row">
+                            <div>
+                                <input type="radio" class="radio_input_pro" value="@item.GoldType_ID" />    @item.Gold_Crt
+                            </div>
                         </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
+                    }
+                </div>
+            </div>
+            <hr />
+            @* Category *@
+            <div>
+                <p class="style_title">Category</p>
+                <div class="panel_">
+                    @foreach (var item in Model.Cate)
+                    {
+                        <div class="one_row">
+                            <div>
+                                <input type="radio" class="radio_input_pro" value="@item.Cat_ID" />    @item.Cat_Name
+                            </div>
                         </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
+
+                    }
+
+                </div>
+            </div>
+            <hr />
+            @*  Stone*@
+            <div>
+                <p class="style_title">Stone</p>
+                <div class="panel_">
+                    @foreach (var item in Model.Stone)
+                    {
+                        <div class="one_row">
+                            <div>
+                                <input type="radio" class="radio_input_pro" value="@item.StoneQlty_ID" />    @item.StoneQlty
+                            </div>
                         </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div> <div class="one_row">
-                        <div>
-                            <input type="radio" class="radio_input_pro" /> Barcelte
-                        </div>
-                        <div class="text_ra_pro">
-                            <p class="ivotrivcl">1</p>
-                        </div>
-                    </div>
+
+                    }
+
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
 <div class="container-fluid contain_of_pro" id="contain_of_pro">
     <div class="contain_bg_pro">
@@ -166,300 +156,31 @@
     @* show product *@
 <div class="show_product" id="show_product">
     <div class="container-fluid edit_space" data-aos="fade-up" data-aos-duration="5000">
+       
         <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
+            @foreach (var item in Model.Producter)
+            {
+                <div class="col-sm-3 effect_item">
+                    <a href="">
+                        <img lazy_src="@item.Path@item.Img" src="imgaeforlazy" class="img_item" />
+                        <img lazy_src="@item.Path@item.secondImg" src="imgaeforlazy" class="img_itemhover" />
+                        <p class="title_item_">@item.Name</p>
+                        <p class="title_item__">AOV</p>
+                        <p class="title_item__one">@item.Price</p>
+                    </a>
+                </div> 
+                }
             </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-        <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-
-        </div>
-        <div class="row">
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongt.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongt2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vongd.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vongd2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong1.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong1_2.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-            <div class="col-sm-3 effect_item">
-                <a href="">
-                    <img lazy_src="~/Content/Image/Home/vong2.jpg" src="imgaeforlazy" class="img_item" />
-                    <img lazy_src="~/Content/Image/Home/vong22.jpg" src="imgaeforlazy" class="img_itemhover" />
-                    <p class="title_item_">Florentino Diamond Jewelly</p>
-                    <p class="title_item__">AOV</p>
-                    <p class="title_item__one">2,000,000 $</p>
-                </a>
-
-
-            </div>
-
-
-        </div>
+      
 
 
 
-    </div>
+        
    
 
 
 </div>
+    </div>
     <div class="page_pro">
         <div class="pagination_pro" id="pagination">
 
@@ -493,10 +214,11 @@
     //rangeinput
 
     const rangeInput = document.querySelectorAll(".range_input input"),
-    process = document.querySelector(".filter_price_moz .progress_");
+        process = document.querySelector(".filter_price_moz .progress_");
     textMin = document.getElementById('spanValueMin');
     textMax = document.getElementById('spanValueMax');
 
+    
 
     rangeInput.forEach(input => {
         input.addEventListener("input", () => {
@@ -504,8 +226,8 @@
                 maxval = parseInt(rangeInput[1].value)
             process.style.left = (minval / rangeInput[0].max) * 100 + "%";
             process.style.right = 100 - (maxval / rangeInput[1].max) * 100 + "%";
-            textMin.textContent = minval;
-            textMax.textContent = maxval;
+            textMin.textContent = minval.toFixed(2);     
+            textMax.textContent = maxval.toFixed(2);
 
             console.log(minval, maxval);
         })
@@ -522,26 +244,29 @@
         display.style.transition = "5s all ease 5s";
 
     }
-    //paging 
+    //paging
     document.addEventListener('DOMContentLoaded', function () {
         var itemsPerPage = 12;
         var productList = document.getElementById('show_product');
         var products = productList.getElementsByClassName('effect_item');
         var totalPages = Math.ceil(products.length / itemsPerPage);
-        showPage(1   );
+        showPage(1);
         var pagination = document.getElementById('pagination');
-
         for (var i = 1; i <= totalPages; i++) {
             var pageLink = document.createElement('span');
             pageLink.textContent = i;
             pageLink.classList.add('page-link');
             pageLink.style.border = "none";
             pageLink.style.color = "#000";
-            var cpage=pageLink;
             pageLink.addEventListener('click', function () {
                 pageLink.style.backgroundColor = "#000";
                 pageLink.style.color = "#fff";
-                showPage(parseInt(this.textContent));              
+                showPage(parseInt(this.textContent));
+            });
+            pageLink.addEventListener('click', function () {
+                pageLink.style.backgroundColor = "#fff";
+                pageLink.style.color = "#000";
+                showPage(parseInt(this.textContent));
             });
             pagination.appendChild(pageLink);
         }
@@ -549,17 +274,33 @@
         function showPage(pageNumber) {
             for (var i = 0; i < products.length; i++) {
                 products[i].style.display = 'none';
-            }
 
+            }
             var startIndex = (pageNumber - 1) * itemsPerPage;
             var endIndex = startIndex + itemsPerPage;
 
             for (var i = startIndex; i < endIndex && i < products.length; i++) {
                 products[i].style.display = 'block';
-               
+
             }
+
         }
     });
+    //button filter
+    var acc = document.getElementsByClassName("style_title");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+}
 
 </script>
 

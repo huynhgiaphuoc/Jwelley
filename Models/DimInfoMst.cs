@@ -26,6 +26,7 @@ namespace Jewelly.Models
         public string DimCrt { get; set; }
         public string DimPrice { get; set; }
         public string DimImg { get; set; }
+        public string Path_img { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemMst> ItemMsts { get; set; }

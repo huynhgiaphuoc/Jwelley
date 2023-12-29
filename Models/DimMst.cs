@@ -21,6 +21,7 @@ namespace Jewelly.Models
         public decimal Dim_Size { get; set; }
         public decimal Dim_Rate { get; set; }
         public decimal Dim_Amt { get; set; }
+        public string Path_img { get; set; }
         public Nullable<int> Style_Code { get; set; }
         public Nullable<int> DimQlty_ID { get; set; }
         public Nullable<int> DimSubType_ID { get; set; }

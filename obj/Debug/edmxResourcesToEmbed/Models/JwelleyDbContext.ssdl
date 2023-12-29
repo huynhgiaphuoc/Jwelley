@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="jewellyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="JwelleyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="AdminLoginMst">
     <Key>
       <PropertyRef Name="userName" />
@@ -54,6 +54,13 @@
     <Property Name="Certify_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Certify_Type" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Collections">
+    <Key>
+      <PropertyRef Name="collection_ID" />
+    </Key>
+    <Property Name="collection_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CGmail" Type="varchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="DimInfoMst">
     <Key>
       <PropertyRef Name="DimID" />
@@ -64,6 +71,7 @@
     <Property Name="DimCrt" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="DimPrice" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="DimImg" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Path_img" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="DimMst">
     <Key>
@@ -76,6 +84,7 @@
     <Property Name="Dim_Size" Type="numeric" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Dim_Rate" Type="numeric" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Dim_Amt" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Path_img" Type="varchar(max)" />
     <Property Name="Style_Code" Type="int" />
     <Property Name="DimQlty_ID" Type="int" />
     <Property Name="DimSubType_ID" Type="int" />
@@ -93,6 +102,7 @@
     </Key>
     <Property Name="DimSubType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DimQlty" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="GoldKrtMst">
     <Key>
@@ -133,7 +143,7 @@
     <Property Name="Style_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Pairs" Type="numeric" Precision="3" Scale="0" Nullable="false" />
     <Property Name="Quantity" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Prod_Quality" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prod_Quality" Type="varchar(max)" Nullable="false" />
     <Property Name="Gold_Wt" Type="numeric" Precision="10" Scale="3" Nullable="false" />
     <Property Name="Stone_Wt" Type="numeric" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Net_Gold" Type="numeric" Precision="10" Scale="3" Nullable="false" />
@@ -163,6 +173,13 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Jewellery_Type" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="news_ID" />
+    </Key>
+    <Property Name="news_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGmail" Type="varchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="Orderdetails">
     <Key>
       <PropertyRef Name="Orderdetails_ID" />
@@ -179,7 +196,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="type" Type="varchar" MaxLength="255" />
-    <Property Name="numbercard" Type="int" />
+    <Property Name="numbercard" Type="varchar(max)" />
     <Property Name="cgv" Type="int" />
     <Property Name="expiration_date" Type="date" />
   </EntityType>
@@ -188,7 +205,7 @@
       <PropertyRef Name="Prod_ID" />
     </Key>
     <Property Name="Prod_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Prod_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prod_Type" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="StoneMst">
     <Key>
@@ -209,16 +226,6 @@
     </Key>
     <Property Name="StoneQlty_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StoneQlty" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="UserRegMst">
     <Key>
@@ -455,12 +462,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="jewellyModelStoreContainer">
+  <EntityContainer Name="JwelleyModelStoreContainer">
     <EntitySet Name="AdminLoginMst" EntityType="Self.AdminLoginMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BrandMst" EntityType="Self.BrandMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CartList" EntityType="Self.CartList" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CatMst" EntityType="Self.CatMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CertifyMst" EntityType="Self.CertifyMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Collections" EntityType="Self.Collections" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DimInfoMst" EntityType="Self.DimInfoMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DimMst" EntityType="Self.DimMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DimQltyMst" EntityType="Self.DimQltyMst" Schema="dbo" store:Type="Tables" />
@@ -470,12 +478,12 @@
     <EntitySet Name="Inquiry" EntityType="Self.Inquiry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ItemMst" EntityType="Self.ItemMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JewelTypeMst" EntityType="Self.JewelTypeMst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orderdetails" EntityType="Self.Orderdetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProdMst" EntityType="Self.ProdMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StoneMst" EntityType="Self.StoneMst" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StoneQltyMst" EntityType="Self.StoneQltyMst" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRegMst" EntityType="Self.UserRegMst" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_crt_id_ad" Association="Self.fk_crt_id_ad">
       <End Role="AdminLoginMst" EntitySet="AdminLoginMst" />

@@ -22,6 +22,7 @@ namespace Jewelly.Models
     
         public int DimSubType_ID { get; set; }
         public string DimQlty { get; set; }
+        public string description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DimMst> DimMsts { get; set; }
