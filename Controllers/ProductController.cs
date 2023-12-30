@@ -16,46 +16,28 @@ namespace Jwelley.Controllers
         {
             return View();
         }
-        public ActionResult Index() {
-        var model = new Join().SelectProduct().ToList();
-        List<BrandMst> brand = db.BrandMsts.ToList();
-        List<JewelTypeMst> jewe = db.JewelTypeMsts.ToList();
-        List<CatMst> gold = db.CatMsts.ToList();
-        List<GoldKrtMst> gold_t = db.GoldKrtMsts.ToList();
-        List<StoneQltyMst> stone = db.StoneQltyMsts.ToList();
-        dynamic models = new ExpandoObject();
-        models.Brand = brand;
-        models.Producter = model;
-        models.Jewe = jewe;
-        models.Cate = gold;
-        models.GoldType = gold_t;
-        models.Stone = stone;
-        return View(models);
-        }
-        [HttpGet]
-        public ActionResult Index(decimal priceto,decimal pricefrom,string brand,string jewe, string gold,string stone,string goldst)
-        {
-            if(brand != null)
-            {
-                if(jewe != null)
-                {
-                    if(gold != null)
-                    {
-                        if(stone != null)
-                        {
-                            if(goldst != null)
-                            {
-                               var s1 = 
+        public ActionResult Jewelry(decimal? MinPrice, decimal? MaxPrice,int? Brandtype,int? jewelry,int? Gold,int? Categorytype,int? stoneq,string prices) {
+            
 
-                            }
-                        }
-                    }
-                }
-            }
+                var model = new Join().SelectProduct(MinPrice,MaxPrice,Brandtype,Gold,jewelry,Categorytype,stoneq,prices).ToList();
+                List<BrandMst> brand = db.BrandMsts.ToList();
+                List<JewelTypeMst> jewe = db.JewelTypeMsts.ToList();
+                List<CatMst> gold = db.CatMsts.ToList();
+                List<GoldKrtMst> gold_t = db.GoldKrtMsts.ToList();
+                List<StoneQltyMst> stone = db.StoneQltyMsts.ToList();
 
-            return View();
+
+                dynamic models1 = new ExpandoObject();
+                models1.Brand = brand;
+                models1.Producter = model;
+                models1.Jewe = jewe;
+                models1.Cate = gold;
+                models1.GoldType = gold_t;
+                models1.Stone = stone;
+               
+
+                return View(models1);
 
         }
-
     }
 }

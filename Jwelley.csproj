@@ -96,6 +96,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Css\demo.css" />
+    <Content Include="Content\Css\intlTelInput.css" />
+    <Content Include="Content\Css\intlTelInput.min.css" />
     <Content Include="Content\Css\Responsive.css" />
     <Content Include="Content\Css\Style.css" />
     <Content Include="Content\Image\About\aboutbr.jpg" />
@@ -114,6 +117,8 @@
     <Content Include="Content\Image\Admin\meadow0804.jpg" />
     <Content Include="Content\Image\Admin\orilie2205.jpg" />
     <Content Include="Content\Image\Admin\vy2301.jpg" />
+    <Content Include="Content\Image\Countries\flags%402x.png" />
+    <Content Include="Content\Image\Countries\flags.png" />
     <Content Include="Content\Image\Customer\nam.jpg" />
     <Content Include="Content\Image\Customer\nu.jpg" />
     <Content Include="Content\Image\Contact\contact_br.jpg" />
@@ -121,6 +126,7 @@
     <Content Include="Content\Image\Home\2.png" />
     <Content Include="Content\Image\Home\3.jpg" />
     <Content Include="Content\Image\Home\3.png" />
+    <Content Include="Content\Image\Home\americanflag.jpg" />
     <Content Include="Content\Image\Home\b1.jpg" />
     <Content Include="Content\Image\Home\b2.jpg" />
     <Content Include="Content\Image\Home\b3.jpg" />
@@ -144,6 +150,7 @@
     <Content Include="Content\Image\Home\clseardrop.jpg" />
     <Content Include="Content\Image\Home\clsnecklace.jpg" />
     <Content Include="Content\Image\Home\clsring.jpg" />
+    <Content Include="Content\Image\Home\indiaflag.jpg" />
     <Content Include="Content\Image\Home\mau1.jpg" />
     <Content Include="Content\Image\Home\mau2.jpg" />
     <Content Include="Content\Image\Home\mau3.jpg" />
@@ -156,6 +163,7 @@
     <Content Include="Content\Image\Home\nhando.jpg" />
     <Content Include="Content\Image\Home\Pearl_Rings.jpg" />
     <Content Include="Content\Image\Home\RingDiamond.jpg" />
+    <Content Include="Content\Image\Home\vietnameflag.jpg" />
     <Content Include="Content\Image\Home\vong1.jpg" />
     <Content Include="Content\Image\Home\vong1_2.jpg" />
     <Content Include="Content\Image\Home\vong2.jpg" />
@@ -564,6 +572,13 @@
     <Content Include="Content\Image\Rules\cut.png" />
     <Content Include="Content\Image\Layout\upicon.png" />
     <Content Include="Content\Script\Api.js" />
+    <Content Include="Content\Script\data.js" />
+    <Content Include="Content\Script\data.min.js" />
+    <Content Include="Content\Script\intlTelInput-jquery.js" />
+    <Content Include="Content\Script\intlTelInput-jquery.min.js" />
+    <Content Include="Content\Script\intlTelInput.js" />
+    <Content Include="Content\Script\intlTelInput.min.js" />
+    <Content Include="Content\Script\utils.js" />
     <Content Include="Global.asax" />
     <Content Include="Models\JwelleyDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -698,7 +713,8 @@
     <Content Include="Views\Account\General.cshtml" />
     <Content Include="Views\Account\Change.cshtml" />
     <Content Include="Views\Account\Information.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\ShowProduct.cshtml" />
+    <Content Include="Views\Product\Jewelry.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
