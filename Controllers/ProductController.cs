@@ -17,16 +17,12 @@ namespace Jwelley.Controllers
             return View();
         }
         public ActionResult Jewelry(decimal? MinPrice, decimal? MaxPrice,int? Brandtype,int? jewelry,int? Gold,int? Categorytype,int? stoneq,string prices) {
-            
-
-                var model = new Join().SelectProduct(MinPrice,MaxPrice,Brandtype,Gold,jewelry,Categorytype,stoneq,prices).ToList();
+                var model = new Join().SelectProduct(MinPrice,MaxPrice,Brandtype,Gold,jewelry,Categorytype,stoneq,prices).ToList();       
                 List<BrandMst> brand = db.BrandMsts.ToList();
                 List<JewelTypeMst> jewe = db.JewelTypeMsts.ToList();
                 List<CatMst> gold = db.CatMsts.ToList();
                 List<GoldKrtMst> gold_t = db.GoldKrtMsts.ToList();
                 List<StoneQltyMst> stone = db.StoneQltyMsts.ToList();
-
-
                 dynamic models1 = new ExpandoObject();
                 models1.Brand = brand;
                 models1.Producter = model;
@@ -34,6 +30,7 @@ namespace Jwelley.Controllers
                 models1.Cate = gold;
                 models1.GoldType = gold_t;
                 models1.Stone = stone;
+           
                
 
                 return View(models1);

@@ -29,13 +29,16 @@
                 <input class="input_edits form-control txt--input emailID" oninput="checkEmail();" placeholder="Email" type="email" name="emailID" />
             </div>
 
-
-
             <div class="space_input_login">
                 <p>PHONE <red style="color: red">*</red></p>
 
 
-                <input class="input_edits form-control txt--input mobNo" id="phone" oninput="checkPhone();" placeholder="Mobile" type="tel" name="mobNo" /> 
+                <input class="input_edits form-control txt--input mobNo" id="mobNo" type="tel" oninput="checkPhone();" name="mobNo" />
+                <div class="span_al">
+                    <span id="valid-msg" class="hide">✓ Valid</span>
+                    <span id="error-msg" class="hide"></span>
+                </div>
+              
             </div>
             <div class="space_input_login">
                 <p>BIRTHDAY <red style="color: red">*</red></p>
@@ -59,41 +62,58 @@
             </div>
             <div>
                 <a class="forget_pass">Fogret Password ?</a>
-                <button type="submit" class="btn btn--dark--model" style="margin-left: 0;margin-top: 1em">Register</button>
+                <button type="submit" id="btn" class="btn btn--dark--model" style="margin-left: 0;margin-top: 1em">Register</button>
             </div>
 
         </form>
     </div>
+    <script src="~/Content/Script/intlTelInput.js"></script>
+    <script src="~/Content/Script/utils.js"></script>
 </div>
-<script src="~/Content/Script/intlTelInput.js"></script>
+
 <script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-        nationalMode: false,
-        utilsScript: "./build/js/utils.js",
-        allowDropdown: true,
-    });
-
-    // Set the initial dial code 
+    // PHONE
+    const input = document.querySelector(".mobNo");
     
-
-    // Make the input field not clickable (remove the down arrow icon)
-    const arrow = document.querySelector(".iti__flag-container > .arrow");
-    arrow.style.display = "none";
-
-    // Change the flag on click event
-    const countryCode = document.querySelector(".iti__selected-dial-code ");
-    const countryFlag = document.querySelector(".iti__flag-container > .iti__flag");
-    const phoneNumberInput = document.getElementById("phoneNumber");
-
-    countryFlag.addEventListener("click", function () {
-        const dialCode = countryCode.innerText;
-        iti.setCountry(dialCode.trim());
-
-        // Add a space after the country code in the input field
-        phoneNumberInput.value = phoneNumberInput.value.replace(/^\+\d*/, `+${dialCode} `);
+    const button = document.querySelector("#btn");
+    const errorMsg = document.querySelector("#error-msg");
+    const validMsg = document.querySelector("#valid-msg");
+    const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+    const iti = window.intlTelInput(input, {
+        initialCountry: 'vn',
+        utilsScript: "/intl-tel-input/js/utils.js?1701962297307"
     });
+    const reset = () => {
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+    };
+    input.addEventListener('blur', () => {
+      
+        //input.style.border = "1px solid green";
+        
+        reset();
+        if (input.value.trim()) {
+            if (iti.isPossibleNumber()) {
+                input.style.border = "1px solid green";
+                validMsg.classList.remove("hide");
+            } else {
+                input.classList.add("error");
+                input.style.border = "1px solid red";
+                console.log("Blur event !");
+
+                const errorCode = iti.getValidationError();
+                errorMsg.innerHTML = errorMap[errorCode];
+                errorMsg.classList.remove("hide");
+            }
+        }
+    });
+    input.addEventListener('change', reset);
+    input.addEventListener('keyup', reset);
+    //AOS
     AOS.init();
+    //AJAX
     $("#signup").click(function () {
         $("#displaysignin").load("Login", "Account");
     });

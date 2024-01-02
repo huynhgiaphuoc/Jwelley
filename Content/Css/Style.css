@@ -914,12 +914,18 @@ form.example::after {
     border: none;
     border-radius: 3px;
 }
-
+.hide{
+    display: none;
+}
 .space_input_login{
     margin-top: 10px;
 }
-
-.space_input_login p b{
+.span_al {
+    position: relative;
+    right: 12em;
+    top: 0.6em;
+}
+.space_input_login p b {
     color: red;
 }
 

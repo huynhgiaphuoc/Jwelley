@@ -279,8 +279,11 @@
         var pagination = document.getElementById('pagination');
         for (var i = 1; i <= totalPages; i++) {
             var cur = i;
+           
             var pageLink = document.createElement('span');
             pageLink.textContent = i;
+            
+            this.classList.remove('page-link')
             pageLink.classList.add('page-link');
             pageLink.style.border = "none";
             pageLink.style.color = "#000";
@@ -296,9 +299,6 @@
                 this.classList.add('active');
                 this.style.backgroundColor = "#000";
                 this.style.color = "#fff";
-
-                
-                   
                     showPage(parseInt(this.textContent));
                 }); 
             pagination.appendChild(pageLink);
